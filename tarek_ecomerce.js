@@ -51,6 +51,10 @@ app.use("/api/products", productsRouter);
 app.use("/api/carts", cartsRouter);
 app.use("/api/orders", ordersRouter);
 
+app.use("/", (req, res) => {
+  res.json("Welcome To The Base Backend");
+});
+
 mongoose.connect(url).then(() => {
   console.log("MongoDB Server Started");
 });
